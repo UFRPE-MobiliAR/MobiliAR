@@ -5,4 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes: []
-  m_configObjects: {}
+  m_configObjects:
+    Niantic.Lightship.AR.LightshipSettings: {fileID: 11400000, guid: c4c5a2c8f0dca8b499505cb9ceb2706b, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 389564555f1fca140934831b80913f2f, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 9f383028c59fd824b897c5fdac74c3cf, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: cac96573d9e883e4fb77175ceb1b374b, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a64cf1e9a1d92a5439c1e5cd55e6da79, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4a79fa45799877a4bb20512bb2f6bc56, type: 2}
