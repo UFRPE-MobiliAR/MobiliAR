@@ -1,0 +1,3 @@
+Caixas de texto das telas de login e cadastro agora são utilizaveis e interagiveis
+Apenas para testes os usuários estão sendo cadastrados em um arquivo txt
+Pequenos textos de erro caso haja algo errado com o login ou cadastro aparecem na tela brevemente, apenas para controle de fluxo.
