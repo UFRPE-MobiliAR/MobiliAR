@@ -1,20 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
+using MySql.Data.MySqlClient;
+using System;
 
 public class LoginManager : MonoBehaviour
 {
     public InputField Email_Login; // Campo de entrada de email
     public InputField Senha_Login; // Campo de entrada de senha
     public Button botaoLogar; // Botão de logar
+    public Button botaoAcessar; // Botão que aparecerá após o login bem-sucedido
     public Text Falha_Login; // Texto para mostrar erro de login
 
-    private string filePath; // Caminho para o arquivo .txt de cadastro
+    private string connectionString; // String de conexão com o banco de dados
 
     void Start()
     {
-        // Define o caminho para o arquivo .txt no diretório persistente da Unity
-        filePath = Application.persistentDataPath + "/cadastro.txt";
+        // Define a string de conexão com o banco de dados MySQL
+        connectionString = "Server=192.168.18.18;Database=MobiliAR;User ID=MobiliAR;Password=MOBMOB;Port=3306;";
 
         // Verifica se todos os componentes estão atribuídos
         if (Email_Login == null)
@@ -36,7 +38,6 @@ public class LoginManager : MonoBehaviour
             Debug.LogError("Botão de login não atribuído no script LoginManager.");
         }
 
-        // Verifica se o componente Falha_Login está atribuído
         if (Falha_Login == null)
         {
             Debug.LogError("Falha_Login não atribuído no script LoginManager.");
@@ -44,6 +45,11 @@ public class LoginManager : MonoBehaviour
         else
         {
             Falha_Login.gameObject.SetActive(false); // Garante que o texto de erro esteja inicialmente oculto
+        }
+
+        if (botaoAcessar != null)
+        {
+            botaoAcessar.gameObject.SetActive(false); // Botão "Acessar" inicialmente oculto
         }
     }
 
@@ -53,11 +59,26 @@ public class LoginManager : MonoBehaviour
         string email = Email_Login.text;
         string senha = Senha_Login.text;
 
-        // Tenta logar o usuário verificando o email e a senha no arquivo .txt
+        // Verifica se os campos estão preenchidos
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha))
+        {
+            ShowErrorMessage("Preencha todos os campos.");
+            return;
+        }
+
+        // Tenta logar o usuário verificando o email e a senha no banco de dados
         if (TryLogin(email, senha))
         {
             Debug.Log("Login realizado com sucesso!");
-            // Aqui você pode adicionar a lógica de sucesso de login (ex: ir para uma nova cena)
+
+            // Oculta a mensagem de erro ao logar com sucesso
+            Falha_Login.gameObject.SetActive(false);
+
+            // Exibe o botão "Acessar" após o login bem-sucedido
+            if (botaoAcessar != null)
+            {
+                botaoAcessar.gameObject.SetActive(true);
+            }
         }
         else
         {
@@ -68,29 +89,33 @@ public class LoginManager : MonoBehaviour
 
     private bool TryLogin(string email, string senha)
     {
-        // Verifica se o arquivo existe antes de tentar ler
-        if (File.Exists(filePath))
-        {
-            // Lê todas as linhas do arquivo
-            string[] lines = File.ReadAllLines(filePath);
-            foreach (string line in lines)
-            {
-                // Cada linha é dividida por vírgulas, então separamos os campos
-                string[] fields = line.Split(',');
+        bool loginSucesso = false;
 
-                // Verifica se há pelo menos 3 campos na linha
-                if (fields.Length >= 3 && fields[0] == email && fields[2] == senha)
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    return true; // Login bem-sucedido
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Senha", senha);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    loginSucesso = (count > 0);
                 }
             }
         }
-        else
+        catch (MySqlException ex)
         {
-            Debug.LogError("Arquivo de cadastro não encontrado: " + filePath);
+            Debug.LogError("Erro ao conectar ao banco de dados: " + ex.Message);
+            ShowErrorMessage("Erro ao conectar ao servidor. Tente novamente mais tarde.");
         }
 
-        return false; // Login falhou
+        return loginSucesso;
     }
 
     private void ShowErrorMessage(string message)
