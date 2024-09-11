@@ -14,8 +14,7 @@ public class NavMeshHowTo : MonoBehaviour
     private LightshipNavMeshManager _navmeshManager;
 
     public int dot = 0;
-    [SerializeField]
-    private GameObject _agentPrefab;
+    private GameObject _agentPrefab; // Será definido dinamicamente
 
     private GameObject _creature;
     private LightshipNavMeshAgent _agent;
@@ -28,6 +27,16 @@ public class NavMeshHowTo : MonoBehaviour
     private void Start()
     {
         mainCameraTransform = Camera.main.transform;
+
+        // Pegar o modelo armazenado na variável estática do SceneChanger
+        _agentPrefab = SceneChanger.modelToPass;
+
+        // Verificar se o modelo foi realmente passado
+        if (_agentPrefab == null)
+        {
+            Debug.LogError("Nenhum modelo foi passado para esta cena.");
+        }
+        Debug.LogError("modelo foi passado para esta cena.");
     }
 
     void Update()
@@ -74,9 +83,18 @@ public class NavMeshHowTo : MonoBehaviour
                     if (dot == 0)
                     {
                         dot = 1;
-                        _creature = Instantiate(_agentPrefab);
-                        _creature.transform.position = hit.point;
-                        _agent = _creature.GetComponent<LightshipNavMeshAgent>();
+
+                        // Verifica se o modelo foi carregado corretamente antes de instanciar
+                        if (_agentPrefab != null)
+                        {
+                            _creature = Instantiate(_agentPrefab);
+                            _creature.transform.position = hit.point;
+                            _agent = _creature.GetComponent<LightshipNavMeshAgent>();
+                        }
+                        else
+                        {
+                            Debug.LogError("O _agentPrefab não está definido.");
+                        }
                     }
                     else
                     {
@@ -91,6 +109,7 @@ public class NavMeshHowTo : MonoBehaviour
             }
         }
     }
+
+    // Função auxiliar para buscar GameObjects por nome, caso necessário
     public static GameObject FindGameObjectsAll(string name) => Resources.FindObjectsOfTypeAll<GameObject>().First(x => x.name == name);
 }
-

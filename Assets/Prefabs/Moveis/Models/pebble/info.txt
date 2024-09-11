@@ -1,0 +1,11 @@
+Name: Pebble
+Version: 2014
+Preview: Yes
+Units: Millimeters
+Dimension: 996.07 x 795.1 x 691.77
+Polys: 124 308
+XForm: Yes
+Box Trick: No
+Model Parts: 6
+Render: V-Ray
+Formats: 3Ds Max 2014, OBJ, FBX, 3DS

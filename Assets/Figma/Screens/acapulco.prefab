@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 4981549861651912001}
   - component: {fileID: 3912694145574702453}
   m_Layer: 0
-  m_Name: cape town
+  m_Name: acapulco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +184,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8089072398669985354}
   - {fileID: 2134478540851806759}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 9143355273433310261}
   - component: {fileID: 4173400856706683939}
   - component: {fileID: 1147992360158199977}
-  - component: {fileID: 7721385179175920398}
+  - component: {fileID: 1568770032072656154}
   m_Layer: 0
   m_Name: Group 22
   m_TagString: Untagged
@@ -779,19 +779,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7721385179175920398}
-        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: AR_Scene
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4173400856706683939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +787,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2206477339240358005}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c769d7a55f9d408f86cb6f07f9b2b80, type: 3}
   m_Name: 
@@ -817,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb507315cb20134390dd954d165cad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7721385179175920398
+--- !u!114 &1568770032072656154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -829,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22df88b459d0ea34ebda397f5670a376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelToSelect: {fileID: 1311123984488362214, guid: 647107ba2e5ea014ca4c1fec198a99dc, type: 3}
+  modelToSelect: {fileID: 1311123984488362214, guid: 3374628532518f644bfefbe19220d9fc, type: 3}
 --- !u!1 &2317275391287215311
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,8 +888,8 @@ GameObject:
   - component: {fileID: 2851333114106478897}
   - component: {fileID: 230986042109346246}
   - component: {fileID: 8429349829157076773}
-  - component: {fileID: 3014369978592999334}
-  - component: {fileID: 604021588571146616}
+  - component: {fileID: 8112042605246238591}
+  - component: {fileID: 3115506410581405745}
   m_Layer: 0
   m_Name: 4.5
   m_TagString: Untagged
@@ -976,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loja parceira  2xR$1.799,00
+  m_text: Loja parceira  R$219,12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be4b86e782f8a444a8de9a3fb78ad9e6, type: 2}
   m_sharedMaterial: {fileID: 2631473621008886359, guid: be4b86e782f8a444a8de9a3fb78ad9e6, type: 2}
@@ -1059,7 +1047,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &3014369978592999334
+--- !u!114 &8112042605246238591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2855164828642906940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf502a97f675ff748aaba229ac464e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://produto.mercadolivre.com.br/MLB-3758484753-cadeira-poltrona-acapulco-fibra-sintetica-area-gourmet-lazer-_JM?matt_tool=47780295&matt_word=&matt_source=google&matt_campaign_id=14302215540&matt_ad_group_id=157843787695&matt_match_type=&matt_network=g&matt_device=c&matt_creative=686778909996&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=556073282&matt_product_id=MLB3758484753&matt_product_partition_id=1961862651721&matt_target_id=aud-1966981570049:pla-1961862651721&cq_src=google_ads&cq_cmp=14302215540&cq_net=g&cq_plt=gp&cq_med=pla&gad_source=1&gclid=CjwKCAjw_4S3BhAAEiwA_64YhjfB93TalSHQknteRanF0rp2SR16qctwlMCmIgi-hHR4mJCHgIxQ3hoCAqsQAvD_BwE
+--- !u!114 &3115506410581405745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1103,7 +1104,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 604021588571146616}
+      - m_Target: {fileID: 8112042605246238591}
         m_TargetAssemblyTypeName: OpenLink, Assembly-CSharp
         m_MethodName: OpenHyperlink
         m_Mode: 1
@@ -1115,19 +1116,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &604021588571146616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2855164828642906940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf502a97f675ff748aaba229ac464e87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  url: https://sonhodosmoveis.com.br/conjunto-sofa-living-m-175-2-e-3-lugares-veludo-cinza?rgid=21341331&srsltid=AfmBOooFDsma21GrZYo2y9rv1khbkgBWq5IEzFmUvnIFMoS6TKPj1pdIZ-A
 --- !u!1 &5952063214644670943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1129,8 @@ GameObject:
   - component: {fileID: 6917692437517110304}
   - component: {fileID: 4300333875279838309}
   - component: {fileID: 9179180376468553771}
+  - component: {fileID: 557091499721488475}
+  - component: {fileID: 1369761312018962530}
   m_Layer: 0
   m_Name: Rectangle 5
   m_TagString: Untagged
@@ -1286,6 +1276,75 @@ MonoBehaviour:
   m_EffectColor: {r: 0.1882353, g: 0.1882353, b: 0.1882353, a: 0.25}
   m_EffectDistance: {x: 0, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &557091499721488475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952063214644670943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4300333875279838309}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1369761312018962530}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AR_Scene
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1369761312018962530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952063214644670943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22df88b459d0ea34ebda397f5670a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelToSelect: {fileID: 1311123984488362214, guid: 3374628532518f644bfefbe19220d9fc, type: 3}
 --- !u!1 &5995624432255150473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sof\xE1 Cape Town"
+  m_text: Cadeira Acapulco
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be4b86e782f8a444a8de9a3fb78ad9e6, type: 2}
   m_sharedMaterial: {fileID: 2631473621008886359, guid: be4b86e782f8a444a8de9a3fb78ad9e6, type: 2}
@@ -1871,10 +1930,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "O sof\xE1 de dois lugares \"Cape Town\" combina eleg\xE2ncia e conforto
-    em um design compacto. \nCom estofamento macio e estrutura robusta, \xE9 ideal
-    para ambientes modernos e acolhedores. Dispon\xEDvel em diversas cores, traz
-    um toque de sofistica\xE7\xE3o para qualquer sala."
+  m_text: "A cadeira Acapulco \xE9 uma pe\xE7a de design cl\xE1ssico, com estrutura
+    de a\xE7o e assento em fios de PVC entrela\xE7ados. Leve e confort\xE1vel, seu
+    formato ergon\xF4mico \xE9 ideal para \xE1reas internas e externas. Dispon\xEDvel
+    em v\xE1rias cores, combina estilo e durabilidade, sendo perfeita para quem busca
+    eleg\xE2ncia e praticidade em qualquer ambiente."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2265e232660161e45a696163b7611501, type: 2}
   m_sharedMaterial: {fileID: 2802047160615028333, guid: 2265e232660161e45a696163b7611501, type: 2}
@@ -2102,14 +2162,14 @@ RectTransform:
   m_GameObject: {fileID: 8645544030776708489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.73, y: 0.73, z: 0.73}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2728278847201787544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 278, y: -202.00006}
+  m_AnchoredPosition: {x: 224, y: -202.00006}
   m_SizeDelta: {x: 414, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851785472902283049
@@ -2160,7 +2220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2ea5a0aafd48a8d46ae32b003963011f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1d84dce1e85a3b4d8d2e9cbafbd9d9c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2397,6 +2457,30 @@ PrefabInstance:
     - target: {fileID: 3729003627811570451, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
       propertyPath: m_Name
       value: Color
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663319343851515130, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
+      propertyPath: m_FillColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663319343851515130, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
+      propertyPath: m_FillColor.g
+      value: 0.3616592
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663319343851515130, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
+      propertyPath: m_FillColor.r
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596774735658375474, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
+      propertyPath: m_FillColor.b
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596774735658375474, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
+      propertyPath: m_FillColor.g
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596774735658375474, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
+      propertyPath: m_FillColor.r
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 8316002600920621557, guid: 9cc18e64a0a772d488033194041c19fd, type: 3}
       propertyPath: m_Pivot.x
