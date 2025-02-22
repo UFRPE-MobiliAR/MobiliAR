@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
-
+using System;
+using MySql.Data.MySqlClient; // Namespace para MySQL
 public class CadastroManager : MonoBehaviour
 {
     // Referências para os InputFields
@@ -9,42 +9,18 @@ public class CadastroManager : MonoBehaviour
     public InputField Nome_Cadastro;
     public InputField Senha_Cadastro;
 
-    // Caminho do arquivo .txt onde os dados serão salvos
-    private string filePath;
-
     // Referência para o Text de erro
     public Text Email_Erro;
 
+    // String de conexão com o banco de dados
+    private string connectionString = "Server=192.168.18.18;Database=MobiliAR;User ID=MobiliAR;Password=MOBMOB;Port=3306;";
+
     void Start()
     {
-        // Define o caminho para o arquivo no diretório persistente da Unity
-        filePath = Application.persistentDataPath + "/cadastro.txt";
-
         // Garante que o texto de erro esteja inicialmente oculto
         if (Email_Erro != null)
         {
             Email_Erro.gameObject.SetActive(false);
-        }
-
-        // Verifica se o arquivo já existe e imprime mensagem no console
-        if (File.Exists(filePath))
-        {
-            Debug.Log("Arquivo de cadastro já existe: " + filePath);
-        }
-        else
-        {
-            // Tenta criar o arquivo e verifica o sucesso
-            try
-            {
-                using (FileStream fs = File.Create(filePath))
-                {
-                    Debug.Log("Arquivo cadastro.txt criado com sucesso em: " + filePath);
-                }
-            }
-            catch (IOException ioEx)
-            {
-                Debug.LogError("Erro ao criar o arquivo cadastro.txt: " + ioEx.Message);
-            }
         }
     }
 
@@ -55,7 +31,7 @@ public class CadastroManager : MonoBehaviour
         string nome = Nome_Cadastro.text;
         string senha = Senha_Cadastro.text;
 
-        // Verifica se o email já existe no arquivo
+        // Verifica se o email já existe no banco de dados
         if (EmailExists(email))
         {
             Debug.Log("Email já cadastrado.");
@@ -63,39 +39,57 @@ public class CadastroManager : MonoBehaviour
         }
         else
         {
-            // Se o email não existe, adiciona o novo registro ao arquivo
-            AddEntryToFile(email, nome, senha);
+            // Se o email não existe, realiza o cadastro no banco de dados
+            RegisterUser(email, nome, senha);
             Debug.Log("Cadastro realizado com sucesso!"); // Mensagem de sucesso no console
         }
     }
 
     private bool EmailExists(string email)
     {
-        // Verifica se o arquivo existe antes de tentar ler
-        if (File.Exists(filePath))
+        bool emailExists = false;
+
+        try
         {
-            // Lê todas as linhas do arquivo
-            string[] lines = File.ReadAllLines(filePath);
-            foreach (string line in lines)
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                // Cada linha é dividida por vírgulas, então separamos os campos
-                string[] fields = line.Split(',');
-                if (fields[0] == email) // O email é o primeiro campo
-                {
-                    return true; // Email encontrado
-                }
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                emailExists = (count > 0);
             }
         }
-        return false; // Email não encontrado
+        catch (Exception ex)
+        {
+            Debug.LogError("Erro ao verificar email: " + ex.Message);
+        }
+
+        return emailExists;
     }
 
-    private void AddEntryToFile(string email, string nome, string senha)
+    private void RegisterUser(string email, string nome, string senha)
     {
-        // Formata a nova entrada para o arquivo
-        string newEntry = email + "," + nome + "," + senha;
+        try
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "INSERT INTO Usuarios (Email, Nome, Senha) VALUES (@Email, @Nome, @Senha)";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Senha", senha);
 
-        // Adiciona a nova entrada ao arquivo
-        File.AppendAllText(filePath, newEntry + "\n");
+                cmd.ExecuteNonQuery();
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Erro ao cadastrar usuário: " + ex.Message);
+        }
     }
 
     private void ShowErrorMessage(string message)

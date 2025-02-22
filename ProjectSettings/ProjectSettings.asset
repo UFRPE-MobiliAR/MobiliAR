@@ -157,7 +157,12 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+<<<<<<< HEAD
     Android: com.Maximo.Maximo
+=======
+    Android: com.DefaultCompany.MobiliAR
+    Standalone: com.DefaultCompany.MobiliAR
+>>>>>>> 4a5d73f2933db5f8d57b5a7dc2a8bd808a54dbae
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -842,7 +847,7 @@ PlayerSettings:
   embeddedLinuxEnableGamepadInput: 1
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
-  apiCompatibilityLevel: 6
+  apiCompatibilityLevel: 3
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 8abc7c3a-b4f8-4bb3-bbf4-ac8dbd764837

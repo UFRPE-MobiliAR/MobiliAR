@@ -339,7 +339,6 @@ GameObject:
   - component: {fileID: 4012004455417106004}
   - component: {fileID: 8566462203905148037}
   - component: {fileID: 2225885582810586050}
-  - component: {fileID: 1173625030356578104}
   m_Layer: 0
   m_Name: Placeholder
   m_TagString: Untagged
@@ -408,22 +407,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Nome
---- !u!114 &1173625030356578104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935354731953678162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e398fdb65d486458f03b1277275db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Email_cadastro: {fileID: 0}
-  Nome_Cadastro: {fileID: 3138309641845085169}
-  Senha_Cadastro: {fileID: 0}
-  Email_Erro: {fileID: 0}
 --- !u!1 &2382128814573300967
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +419,7 @@ GameObject:
   - component: {fileID: 4794032140679210102}
   - component: {fileID: 7602936889426037456}
   - component: {fileID: 7142342328494699584}
-  - component: {fileID: 91022580601282179}
+  - component: {fileID: 8189066885703809194}
   m_Layer: 0
   m_Name: Senha_Cadastro
   m_TagString: Untagged
@@ -571,7 +554,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
---- !u!114 &91022580601282179
+--- !u!114 &8189066885703809194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,7 +563,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2382128814573300967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e398fdb65d486458f03b1277275db1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ff90391ff47e364c9512cd906855546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Email_cadastro: {fileID: 5282972586571564566}
@@ -903,7 +886,7 @@ GameObject:
   - component: {fileID: 1026192406682809079}
   - component: {fileID: 5932847855062759337}
   - component: {fileID: 3138309641845085169}
-  - component: {fileID: 8689373812815778872}
+  - component: {fileID: 3551758524858004214}
   m_Layer: 0
   m_Name: Nome_Cadastro
   m_TagString: Untagged
@@ -1038,7 +1021,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
---- !u!114 &8689373812815778872
+--- !u!114 &3551758524858004214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,7 +1030,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2578799721324686205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e398fdb65d486458f03b1277275db1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ff90391ff47e364c9512cd906855546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Email_cadastro: {fileID: 5282972586571564566}
@@ -1332,7 +1315,7 @@ GameObject:
   - component: {fileID: 1637478783493245151}
   - component: {fileID: 1747106388985179162}
   - component: {fileID: 5282972586571564566}
-  - component: {fileID: 4575591323034220729}
+  - component: {fileID: 291629735264004863}
   m_Layer: 0
   m_Name: Email_Cadastro
   m_TagString: Untagged
@@ -1467,7 +1450,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
---- !u!114 &4575591323034220729
+--- !u!114 &291629735264004863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1476,7 +1459,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3146234063867824383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e398fdb65d486458f03b1277275db1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ff90391ff47e364c9512cd906855546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Email_cadastro: {fileID: 5282972586571564566}
@@ -1593,8 +1576,8 @@ GameObject:
   - component: {fileID: 6720214467246012632}
   - component: {fileID: 7315179752875260367}
   - component: {fileID: 302214048780362549}
-  - component: {fileID: 5578954819526151517}
-  - component: {fileID: 3350545512702157670}
+  - component: {fileID: 8048571185279463089}
+  - component: {fileID: 5062136114867427055}
   m_Layer: 0
   m_Name: Botao_Cadastro
   m_TagString: Untagged
@@ -1783,7 +1766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TargetScreenNodeId: 2:223
---- !u!114 &5578954819526151517
+--- !u!114 &8048571185279463089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1796,8 +1779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botaoCadastrar: {fileID: 7315179752875260367}
-  cadastroManager: {fileID: 3350545512702157670}
---- !u!114 &3350545512702157670
+  cadastroManager: {fileID: 5062136114867427055}
+--- !u!114 &5062136114867427055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1806,7 +1789,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3295949423788093255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e398fdb65d486458f03b1277275db1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ff90391ff47e364c9512cd906855546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Email_cadastro: {fileID: 5282972586571564566}
@@ -2601,7 +2584,7 @@ GameObject:
   - component: {fileID: 740492651172394998}
   - component: {fileID: 5457671855079915025}
   - component: {fileID: 7081013223873433339}
-  - component: {fileID: 6510346939045692658}
+  - component: {fileID: 2910348025473348281}
   m_Layer: 0
   m_Name: Email_Erro
   m_TagString: Untagged
@@ -2670,7 +2653,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "E-mail j\xE1 cadastrado."
---- !u!114 &6510346939045692658
+--- !u!114 &2910348025473348281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2679,12 +2662,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5810071556849304511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43e398fdb65d486458f03b1277275db1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ff90391ff47e364c9512cd906855546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Email_cadastro: {fileID: 0}
-  Nome_Cadastro: {fileID: 0}
-  Senha_Cadastro: {fileID: 0}
+  Email_cadastro: {fileID: 5282972586571564566}
+  Nome_Cadastro: {fileID: 3138309641845085169}
+  Senha_Cadastro: {fileID: 7142342328494699584}
   Email_Erro: {fileID: 7081013223873433339}
 --- !u!1 &5907025676125214838
 GameObject:
