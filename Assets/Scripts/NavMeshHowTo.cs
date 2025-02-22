@@ -14,7 +14,7 @@ public class NavMeshHowTo : MonoBehaviour
     private LightshipNavMeshManager _navmeshManager;
 
     public int dot = 0;
-    private GameObject _agentPrefab; // Será definido dinamicamente
+    public GameObject _agentPrefab; // Serï¿½ definido dinamicamente
 
     private GameObject _creature;
     private LightshipNavMeshAgent _agent;
@@ -28,16 +28,16 @@ public class NavMeshHowTo : MonoBehaviour
     {
         mainCameraTransform = Camera.main.transform;
 
-        // Pegar o modelo armazenado na variável estática do SceneChanger
-        _agentPrefab = SceneChanger.modelToPass;
+    //     // Pegar o modelo armazenado na variï¿½vel estï¿½tica do SceneChanger
+    //     _agentPrefab = SceneChanger.modelToPass;
 
-        // Verificar se o modelo foi realmente passado
-        if (_agentPrefab == null)
-        {
-            Debug.LogError("Nenhum modelo foi passado para esta cena.");
-        }
-        Debug.LogError("modelo foi passado para esta cena.");
-    }
+    //     // Verificar se o modelo foi realmente passado
+    //     if (_agentPrefab == null)
+    //     {
+    //         Debug.LogError("Nenhum modelo foi passado para esta cena.");
+    //     }
+    //     Debug.LogError("modelo foi passado para esta cena.");
+     }
 
     void Update()
     {
@@ -93,7 +93,7 @@ public class NavMeshHowTo : MonoBehaviour
                         }
                         else
                         {
-                            Debug.LogError("O _agentPrefab não está definido.");
+                            Debug.LogError("O _agentPrefab nï¿½o estï¿½ definido.");
                         }
                     }
                     else
@@ -110,6 +110,6 @@ public class NavMeshHowTo : MonoBehaviour
         }
     }
 
-    // Função auxiliar para buscar GameObjects por nome, caso necessário
+    // Funï¿½ï¿½o auxiliar para buscar GameObjects por nome, caso necessï¿½rio
     public static GameObject FindGameObjectsAll(string name) => Resources.FindObjectsOfTypeAll<GameObject>().First(x => x.name == name);
 }
